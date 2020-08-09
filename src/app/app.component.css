@@ -1,0 +1,29 @@
+#top-right{
+  position: relative;
+}
+
+#top-right img{
+  position: absolute;
+  top: -140px;
+  right: -40px;
+}
+#bottom-right{
+  position: relative;
+}
+
+#bottom-right img{
+  position: absolute;
+ bottom: 0px;
+  right: -100px;
+}
+
+#bottom-left{
+  position: relative;
+}
+#bottom-left img{
+  position: absolute;
+  bottom: 0px;
+  left: -350px;
+}
+
+

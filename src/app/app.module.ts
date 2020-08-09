@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {HeaderComponent} from './components/header/header.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { RecipeDialogComponent } from './components/recipes/recipe-dialog/recipe-dialog.component';
@@ -18,17 +17,18 @@ import {MatCardModule} from '@angular/material/card';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {FormsModule} from '@angular/forms';
 import {NotFoundComponent} from './components/not-found/not-found.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     RecipesComponent,
     RecipeDialogComponent,
     NotFoundComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -40,7 +40,8 @@ import {NotFoundComponent} from './components/not-found/not-found.component';
     MatCardModule,
     Ng2SearchPipeModule,
     FormsModule,
-
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [RecipeService],
   bootstrap: [AppComponent]

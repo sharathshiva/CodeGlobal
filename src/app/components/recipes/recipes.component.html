@@ -1,13 +1,18 @@
+<div style="padding-left: 350px">
+  <mat-form-field appearance="outline">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Search by name or category or price" name="search"
+           [(ngModel)]="searchText" autocomplete="off"
+           placeholder="Search by  name or category or price">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</div>
 <br>
-<input class="form-control" type="text" name="search"
-       [(ngModel)]="searchText" autocomplete="off"
-       placeholder="&#61442;  Search by  name or category or price">
-<br>
-<div *ngIf="(recipes | filter: searchText).length === 0">
+<div *ngIf="(recipes | filter: searchText).length === 0" >
   No recipes found
 </div>
-<div *ngFor="let recipeEl of recipes | filter: searchText" (click)="openDialog(recipeEl)" style="padding-left: 100px">
-    <div class="container">
+<div *ngFor="let recipeEl of recipes | filter: searchText" [ngStyle]="{background: 'url(../../assets/Illustration3.png)'}">
+    <div class="container" style="padding-left: 100px;">
       <div class="card-wrapper">
         <div class="card">
           <div class="card-image">
@@ -22,6 +27,11 @@
             <li>
               <a>
                 &#8377;{{recipeEl.price}}
+              </a>
+            </li>
+            <li>
+              <a (click)="openDialog(recipeEl)" >
+                details
               </a>
             </li>
           </ul>
