@@ -1,0 +1,38 @@
+<br>
+<input class="form-control" type="text" name="search"
+       [(ngModel)]="searchText" autocomplete="off"
+       placeholder="&#61442;  Search by  name or category or price">
+<br>
+<div *ngIf="(recipes | filter: searchText).length === 0">
+  No recipes found
+</div>
+<div *ngFor="let recipeEl of recipes | filter: searchText" (click)="openDialog(recipeEl)" style="padding-left: 100px">
+    <div class="container">
+      <div class="card-wrapper">
+        <div class="card">
+          <div class="card-image">
+            <img [src]="recipeEl.image" alt="profile one" style="width: 100%;height: 100%">
+          </div>
+          <ul class="social-icons">
+            <li *ngIf="recipeEl.label">
+              <a>
+                {{recipeEl.label}}
+              </a>
+            </li>
+            <li>
+              <a>
+                &#8377;{{recipeEl.price}}
+              </a>
+            </li>
+          </ul>
+
+          <div class="details">
+            <h2>{{recipeEl.name}}
+              <br>
+              <span class="job-title">Category: {{recipeEl.category}}</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
